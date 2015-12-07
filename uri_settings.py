@@ -1,20 +1,17 @@
 import json
-from os.path import expanduser, isfile, join
+import os
+import uri_util
 
 
 settings_file_path = '.uri_settings.json'
 
 
-def get_home_path():
-    return expanduser('~')
-
-
 def get_settings_path():
-    return join(get_home_path(), settings_file_path)
+    return os.path.join(uri_util.get_home_path(), settings_file_path)
 
 
 def settings_file_exist():
-    return isfile(get_settings_path())
+    return os.path.isfile(get_settings_path())
 
 
 def get_settings():
