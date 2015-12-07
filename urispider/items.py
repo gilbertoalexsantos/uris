@@ -20,3 +20,7 @@ class SubmissionItem(scrapy.Item):
 
 class LoginItem(scrapy.Item):
     logged = scrapy.Field()
+
+
+class SubmitItem(scrapy.Item):
+    submited = scrapy.Field()
