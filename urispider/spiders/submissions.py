@@ -6,17 +6,17 @@ from urispider.mixins import UriLoginMixin
 class SubmissionSpider(UriLoginMixin,
                        scrapy.Spider):
     name = 'submissions'
-    start_urls = ['https://www.urionlinejudge.com.br/judge/pt/runs']
+    url = 'https://www.urionlinejudge.com.br/judge/pt/runs'
 
     def __init__(self, *args, **kwargs):
         super(scrapy.Spider, self).__init__(*args, **kwargs)
         self.kwargs = kwargs
 
     def logged_in(self, response):
-        for url in self.start_urls:
-            yield scrapy.FormRequest(url=url,
-                                     formdata=self.kwargs.get('subs_form_data', {}),
-                                     callback=self.parse)
+        submissions_form_data = self.kwargs.get('submissions_form_data', {})
+        yield scrapy.FormRequest(url=self.url,
+                                 formdata=submissions_form_data,
+                                 callback=self.parse)
 
     def parse(self, response):
         for sel in response.xpath('//tbody/tr'):
