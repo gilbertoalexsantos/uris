@@ -10,9 +10,9 @@ class UriLoginMixin:
         yield Request(self.login_url, callback=self.logging_in)
 
     def logging_in(self, response):
+        login_form_data = self.kwargs.get('login_form_data', {})
         return FormRequest.from_response(response,
-                                         formdata=self.kwargs.get('login_form_data',
-                                                                  {}),
+                                         formdata=login_form_data,
                                          callback=self.logged_in)
 
     def logged_in(self, response):
