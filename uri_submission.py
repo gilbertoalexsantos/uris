@@ -1,4 +1,3 @@
-from multiprocessing.queues import Queue
 from blucrawler import get_results_from_crawler
 from urispider.spiders.submissions import SubmissionSpider
 from uri_login import get_login_form_data, logged
@@ -65,6 +64,6 @@ def get_form_data(flags):
 @logged
 def run_submissions(flags):
     results = get_results_from_crawler(SubmissionSpider,
-                                       subs_form_data=get_form_data(flags),
+                                       submissions_form_data=get_form_data(flags),
                                        login_form_data=get_login_form_data())
     print_submission_items(results)
