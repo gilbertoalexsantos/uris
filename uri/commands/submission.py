@@ -1,6 +1,6 @@
-from blucrawler import get_results_from_crawler
-from urispider.spiders.submissions import SubmissionSpider
-from uri_login import get_login_form_data, logged
+from ..blucrawler import get_results_from_crawler
+from ..urispider.spiders.submissions import SubmissionSpider
+from ..login import get_login_form_data, logged
 
 
 fields = ('id_problem', 'name_problem', 'answer', 'language', 'time', 'date')
@@ -36,10 +36,10 @@ type_of_language = {
 
 
 def print_submission_items(items):
-    print(submission_line_format.format('Code', 'Problem', 'Answer',
-                                        'Language', 'Time', 'Date'))
+    print submission_line_format.format('Code', 'Problem', 'Answer',
+                                        'Language', 'Time', 'Date')
     for item in items:
-        print(submission_line_format.format(*[item[key] for key in fields]))
+        print submission_line_format.format(*[item[key] for key in fields])
 
 
 def get_form_data(flags):

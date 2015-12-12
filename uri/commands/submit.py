@@ -1,7 +1,7 @@
-from blucrawler import get_results_from_crawler
-from urispider.spiders.submit import SubmitSpider
-from uri_login import get_login_form_data, logged
-import uri_util
+from ..blucrawler import get_results_from_crawler
+from ..urispider.spiders.submit import SubmitSpider
+from ..login import get_login_form_data, logged
+from ..util import get_file_from_path
 
 
 form_data_key = {
@@ -22,7 +22,7 @@ type_of_language = {
 
 def pre_process_flags(flags):
     if 'sc' in flags:
-        flags['sc'] = uri_util.get_file_from_path(flags['sc'])
+        flags['sc'] = get_file_from_path(flags['sc'])
 
 
 def get_form_data(flags):

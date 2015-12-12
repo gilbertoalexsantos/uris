@@ -1,4 +1,4 @@
-from uri_login import setup_login
+from .login import setup_login
 
 
 def run_setup(flags):

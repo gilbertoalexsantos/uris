@@ -1,6 +1,6 @@
 import scrapy
-from urispider.mixins import UriLoginMixin
-from urispider.items import LoginItem
+from ..mixins import UriLoginMixin
+from ..items import LoginItem
 
 
 class LoginSpider(UriLoginMixin,

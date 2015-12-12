@@ -1,13 +1,13 @@
 import json
 import os
-import uri_util
+from .util import get_home_path
 
 
 settings_file_path = '.uri_settings.json'
 
 
 def get_settings_path():
-    return os.path.join(uri_util.get_home_path(), settings_file_path)
+    return os.path.join(get_home_path(), settings_file_path)
 
 
 def settings_file_exist():
@@ -20,6 +20,7 @@ def get_settings():
     return data
 
 
+## TODO: Encrypt the password
 def create_settings_file(data={}):
     settings_data = {}
     if settings_file_exist():

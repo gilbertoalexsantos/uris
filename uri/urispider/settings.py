@@ -11,8 +11,8 @@
 
 BOT_NAME = 'urispider'
 
-SPIDER_MODULES = ['urispider.spiders']
-NEWSPIDER_MODULE = 'urispider.spiders'
+SPIDER_MODULES = ['uri.urispider.spiders']
+NEWSPIDER_MODULE = 'uri.urispider.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -62,7 +62,7 @@ DOWNLOAD_DELAY = 1
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'urispider.pipelines.CleanItemPipeline': 300
+    'uri.urispider.pipelines.CleanItemPipeline': 300
 }
 
 

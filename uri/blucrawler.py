@@ -1,9 +1,9 @@
 from multiprocessing.queues import Queue
 from scrapy import signals
 from scrapy.crawler import CrawlerProcess
-from scrapy.utils.project import get_project_settings
 from scrapy.xlib.pydispatch import dispatcher
 from multiprocessing import Process
+from scrapy.settings import Settings
 
 
 class CrawlerWorker(Process):
@@ -31,3 +31,12 @@ def get_results_from_crawler(spider, **kwargs):
     worker = CrawlerWorker(spider, results, **kwargs)
     worker.start()
     return results.get()
+
+
+def get_project_settings():
+    scrapy_module = "uri.urispider.settings"
+    
+    settings = Settings()
+    settings.setmodule(scrapy_module)
+    
+    return settings

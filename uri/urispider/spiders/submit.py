@@ -1,6 +1,6 @@
 import scrapy
-from urispider.items import SubmitItem
-from urispider.mixins import UriLoginMixin
+from ..items import SubmitItem
+from ..mixins import UriLoginMixin
 
 
 class SubmitSpider(UriLoginMixin,

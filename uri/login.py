@@ -1,6 +1,6 @@
-from uri_settings import get_settings, settings_file_exist, create_settings_file
-from urispider.spiders.login import LoginSpider
-from blucrawler import get_results_from_crawler
+from .settings import get_settings, settings_file_exist, create_settings_file
+from .urispider.spiders.login import LoginSpider
+from .blucrawler import get_results_from_crawler
 
 
 form_keys = {

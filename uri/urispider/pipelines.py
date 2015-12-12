@@ -4,8 +4,7 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
-from urispider.utils import clean_text
-from urispider import spiders
+from .util import clean_text
 
 
 class CleanItemPipeline(object):
