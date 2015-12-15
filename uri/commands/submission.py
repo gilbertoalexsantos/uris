@@ -9,8 +9,10 @@ uri subs [-ln=LANGUAGE] [-ans=ANSWER] [-code=PROBLEM_CODE]\
 
 
 help_description = """\
-The subs command accept three optional flags:
-  -ln=LANGUAGE, -ans=ANSWER, -code=PROBLEM_CODE
+Command:
+  {}
+
+All flags are optional
 
 The ln flag accept the options:
   c    C
@@ -33,7 +35,7 @@ Examples of execution:
   uri subs
   uri subs -ln=c -ans=tle -code=1399
   uri subs -ln=java -ans=wa\
-"""
+""".format(brief_description)
 
 
 fields = ('id_problem', 'name_problem', 'answer', 'language', 'time', 'date')
