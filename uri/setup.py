@@ -1,7 +1,7 @@
 from .login import setup_login
 
 
-def run_setup(flags):
+def execute_setup_command(flags):
     logged = setup_login()
     while not logged:
         logged = setup_login()
