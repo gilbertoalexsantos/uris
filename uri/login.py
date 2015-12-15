@@ -76,6 +76,6 @@ def logged(fn):
             logged = setup_login()
             while not logged:
                 logged = setup_login()
-            print "Account configurated successful."
+            print "Account configured successful."
         return fn(*args, **kwargs)
     return wrapper
