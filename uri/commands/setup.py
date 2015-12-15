@@ -1,8 +1,12 @@
-from .login import setup_login
+from ..login import setup_login
 
+
+brief_description = """\
+uri setup\
+"""
 
 def execute_setup_command(flags):
     logged = setup_login()
     while not logged:
         logged = setup_login()
-    print "Setup configurated. Bateu ai?"
+    print "Setup configured. Bateu ai?"
