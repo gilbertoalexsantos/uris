@@ -4,6 +4,34 @@ from ..login import get_login_form_data, logged
 from ..util import get_file_from_path
 
 
+brief_description = """\
+uri sub -ln=LANGUAGE -code=PROBLEM_CODE -sc=PATH_TO_SOURCE_CODE\
+"""
+
+
+help_description = """\
+Command:
+  {}
+
+All the three flags are required.
+
+The ln flag accept the options:
+  c    C
+  c++  C++
+  java Java
+  py2  Python 2
+  py3  Python 3
+
+The code flag is the ID of the problem.
+
+The source flag is source code path.
+
+Examples of execution:
+  uri sub -ln=java -code=1399 -sc=uri-1399.java
+  uri sub -ln=c++ -code=1888 -sc="/Users/gilberto/My Codes/source.cpp"\
+""".format(brief_description)
+
+
 form_data_key = {
     'problem': 'data[Run][problem_id]',
     'language': 'data[Run][language_id]',
@@ -53,3 +81,10 @@ def run_submit(flags):
         print "Successful! (The submission of course)"
     else:
         print "Something went wrong with the submission... I'm sorry, I guess..."
+
+
+def execute_submit_command(flags):
+    if 'help' in flags:
+        print help_description
+    else:
+        run_submit(flags)
