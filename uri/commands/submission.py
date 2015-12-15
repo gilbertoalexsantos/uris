@@ -3,6 +3,39 @@ from ..urispider.spiders.submissions import SubmissionSpider
 from ..login import get_login_form_data, logged
 
 
+brief_description = """\
+uri subs [-ln=LANGUAGE] [-ans=ANSWER] [-code=PROBLEM_CODE]\
+"""
+
+
+help_description = """\
+The subs command accept three optional flags:
+  -ln=LANGUAGE, -ans=ANSWER, -code=PROBLEM_CODE
+
+The ln flag accept the options:
+  c    C
+  c++  C++
+  java Java
+  py2  Python 2
+  py3  Python 3
+
+The ans flag accept the options:
+  ac   Accepted
+  ce   Compilation Error
+  re   Runtime Error
+  tle  Time Limit Exceed
+  pe   Presentation Error
+  wa   Wrong Answer
+
+The code flag is the ID of the problem.
+
+Examples of execution:
+  uri subs
+  uri subs -ln=c -ans=tle -code=1399
+  uri subs -ln=java -ans=wa\
+"""
+
+
 fields = ('id_problem', 'name_problem', 'answer', 'language', 'time', 'date')
 
 
@@ -67,3 +100,10 @@ def run_submissions(flags):
                                        submissions_form_data=get_form_data(flags),
                                        login_form_data=get_login_form_data())
     print_submission_items(results)
+
+
+def execute_submissions_command(flags):
+    if 'help' in flags:
+        print help_description
+    else:
+        run_submissions(flags)
