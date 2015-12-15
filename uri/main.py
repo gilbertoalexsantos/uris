@@ -1,16 +1,18 @@
 import sys
 import os
 from .parser import parser_args
-from .setup import run_setup
-from .commands.submission import run_submissions
+from .setup import execute_setup_command
+from .commands.submission import execute_submissions_command
 from .commands.submit import run_submit
+from .commands.helper import execute_helper_command
 
 
 def execute():
     commands = {
-        'setup': run_setup,
-        'subs': run_submissions,
-        'sub': run_submit
+        'setup': execute_setup_command,
+        'subs': execute_submissions_command,
+        'sub': run_submit,
+        'help': execute_helper_command
     }
 
 
