@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 setup(name="uri",
@@ -8,7 +8,7 @@ setup(name="uri",
       author="Gilberto A. dos Santos",
       author_email="gilberto.alexsantos@gmail.com",
       license="MIT",
-      packages=["uri"],
+      packages=find_packages(),
       zip_safe=False,
       entry_points={
           'console_scripts': ["uri=uri.main:execute"],
