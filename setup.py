@@ -2,7 +2,7 @@ from setuptools import setup
 
 
 setup(name="uri",
-      version="0.1",
+      version="0.1.0",
       description="A command line tool to interact with URI Online Judge",
       url="http://github.com/gilbertoalexsantos/uri",
       author="Gilberto A. dos Santos",
