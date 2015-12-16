@@ -3,6 +3,8 @@ import os
 
 def get_file_from_path(path):
     source_code = ""
+    if not os.path.isabs(path):
+        path = os.path.join(os.getcwd(), path)
     if not os.path.isfile(path):
         return source_code
     with open(path) as f:
