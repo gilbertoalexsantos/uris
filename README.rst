@@ -14,7 +14,7 @@ To install, just clone the repository and in the downloaded folder, type:
 
 .. code-block:: python
    
-   python setup.py install
+   pip install uri
 
 I particularly recommend to install in a virtual environment (virtualenvwrapper_)
 
