@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 setup(name="uris",
       version="0.1.0",
       description="A command line tool to interact with URI Online Judge",
-      url="http://github.com/gilbertoalexsantos/uri",
+      url="https://github.com/gilbertoalexsantos/uris",
       author="Gilberto A. dos Santos",
       author_email="gilberto.alexsantos@gmail.com",
       license="MIT",
