@@ -5,6 +5,7 @@ from .commands.setup import execute_setup_command
 from .commands.submission import execute_submissions_command
 from .commands.submit import execute_submit_command
 from .commands.helper import execute_helper_command
+from .commands.last_submission import execute_last_submission_command
 
 
 def execute():
@@ -12,7 +13,8 @@ def execute():
         'setup': execute_setup_command,
         'subs': execute_submissions_command,
         'sub': execute_submit_command,
-        'help': execute_helper_command
+        'help': execute_helper_command,
+        'last': execute_last_submission_command
     }
 
 
