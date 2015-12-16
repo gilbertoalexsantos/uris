@@ -14,7 +14,7 @@ To install, just clone the repository and in the downloaded folder, type:
 
 .. code-block:: python
    
-   pip install uris
+   pip install git+https://github.com/gilbertoalexsantos/uris.git
 
 I particularly recommend to install in a virtual environment (virtualenvwrapper_)
 
