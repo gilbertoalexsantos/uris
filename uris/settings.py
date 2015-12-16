@@ -3,7 +3,7 @@ import os
 from .util import get_home_path
 
 
-settings_file_path = '.uri_settings.json'
+settings_file_path = '.uris_settings.json'
 
 
 def get_settings_path():

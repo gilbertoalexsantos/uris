@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 
-setup(name="uri",
+setup(name="uris",
       version="0.1.0",
       description="A command line tool to interact with URI Online Judge",
       url="http://github.com/gilbertoalexsantos/uri",
@@ -11,7 +11,7 @@ setup(name="uri",
       packages=find_packages(),
       zip_safe=False,
       entry_points={
-          'console_scripts': ["uri=uri.main:execute"],
+          'console_scripts': ["uris=uris.main:execute"],
       },
       install_requires=[
           'Scrapy==1.0.3',

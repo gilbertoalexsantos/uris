@@ -34,7 +34,7 @@ def get_results_from_crawler(spider, **kwargs):
 
 
 def get_project_settings():
-    scrapy_module = "uri.urispider.settings"
+    scrapy_module = "uris.urispider.settings"
     
     settings = Settings()
     settings.setmodule(scrapy_module)

@@ -2,7 +2,7 @@
 URI
 ===
 
-uri is a command line tool made in python to interact with the Uri_ Online Judge.
+uris[pider] is a command line tool made in python to interact with the Uri_ Online Judge.
 
 Currently, it supports the commands:
 
@@ -14,7 +14,7 @@ To install, just clone the repository and in the downloaded folder, type:
 
 .. code-block:: python
    
-   pip install uri
+   pip install uris
 
 I particularly recommend to install in a virtual environment (virtualenvwrapper_)
 
@@ -24,13 +24,13 @@ Examples
 
 .. code-block:: python
    
-   uri last 3
+   uris last 3
 
 It'll get the last 3 submissions
 
 .. code-block:: python
    
-   uri subs -ln=java
+   uris subs -ln=java
 
 It'll get the last submissions (20) with the filters:
 
@@ -38,7 +38,7 @@ It'll get the last submissions (20) with the filters:
 
 .. code-block:: python
    
-   uri subs -ln=py3 -ans=tle -code=1899
+   uris subs -ln=py3 -ans=tle -code=1899
 
 It'll get the last submissons with the filters:
 
@@ -48,7 +48,7 @@ It'll get the last submissons with the filters:
 
 .. code-block:: python
    
-   uri sub -ln=c++ -code=1788 -sc="source_code.cpp"
+   uris sub -ln=c++ -code=1788 -sc="source_code.cpp"
 
 It'll submit the problem with the filters:
 
@@ -60,13 +60,13 @@ For more information, use the command:
 
 .. code-block:: python
    
-   uri help
+   uris help
 
 Or use the help command flag:
 
 .. code-block:: python
    
-   uri subs --help
+   uris subs --help
 
 ============                
 Requirements
@@ -82,19 +82,19 @@ Just use:
 
 .. code-block:: python
    
-   pip uninstall uri
+   pip uninstall uris
 
 I really recommend to use virtualenvwrapper_. With that, you just need to create a new virtualenv
 
 .. code-block:: python
    
-   mkvirtualenv uri
+   mkvirtualenv uris
 
 And, in the virtualenv, install the uri package. If you want to uninstall, just remove the virtualenv
 
 .. code-block:: python
    
-   rmvirtualenv uri
+   rmvirtualenv uris
 
 Simple!
 
@@ -102,9 +102,9 @@ You'll probably want to remove the settings file. It lays in the user directory
 
 .. code-block:: python
    
-   ~/.uri_settings.json
+   ~/.uris_settings.json
 
-====              
+====
 TODO
 ====
 
