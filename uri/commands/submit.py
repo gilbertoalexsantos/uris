@@ -29,6 +29,7 @@ The source flag is source code path.
 Examples of execution:
   uri sub -ln=java -code=1399 -sc=uri-1399.java
   uri sub -ln=c++ -code=1888 -sc="/Users/gilberto/My Codes/source.cpp"\
+  uri sub -ln=py2 -code=1000 -sc=My\ Source\ Code.py
 """.format(brief_description)
 
 
