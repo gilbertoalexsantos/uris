@@ -1,10 +1,11 @@
 from ..blucrawler import get_results_from_crawler
 from ..urispider.spiders.submissions import SubmissionSpider
 from ..login import get_login_form_data, logged
+from ..parser import match_single_double_key
 
 
 brief_description = """\
-uris subs [-ln=LANGUAGE] [-ans=ANSWER] [-code=PROBLEM_CODE]\
+uris [subs | submissions] [-lang | --language] [-a | --answer] [-c | --code]\
 """
 
 
@@ -14,14 +15,14 @@ Command:
 
 All flags are optional
 
-The ln flag accept the options:
+The language flag accept the options:
   c    C
   c++  C++
   java Java
   py2  Python 2
   py3  Python 3
 
-The ans flag accept the options:
+The answer flag accept the options:
   ac   Accepted
   ce   Compilation Error
   re   Runtime Error
@@ -33,8 +34,8 @@ The code flag is the ID of the problem.
 
 Examples of execution:
   uris subs
-  uris subs -ln=c -ans=tle -code=1399
-  uris subs -ln=java -ans=wa\
+  uris subs -lang=c -a=tle -c=1399
+  uris submissions --language=java -a=wa\
 """.format(brief_description)
 
 
@@ -80,18 +81,21 @@ def print_submission_items(items):
 def get_form_data(flags):
     form_data = {}
 
-    if 'ans' in flags:
-        answer = type_of_answer.get(flags['ans'], None)
+    answer_value = match_single_double_key(flags, 'a', 'answer')
+    if answer_value:
+        answer = type_of_answer.get(answer_value, None)
         if answer:
             form_data[form_data_key['answer']] = answer[1]
 
-    if 'ln' in flags:
-        language = type_of_language.get(flags['ln'], None)
+    language_value = match_single_double_key(flags, 'lang', 'language')
+    if language_value:
+        language = type_of_language.get(language_value, None)
         if language:
             form_data[form_data_key['language']] = language[1]
 
-    if 'code' in flags:
-        form_data[form_data_key['problem']] = flags['code']
+    code_value = match_single_double_key(flags, 'c', 'code')
+    if code_value:
+        form_data[form_data_key['problem']] = code_value
 
     return form_data
 
@@ -105,7 +109,7 @@ def run_submissions(flags):
 
 
 def execute_submissions_command(flags):
-    if 'help' in flags:
+    if 'help' in flags['double']:
         print help_description
     else:
         run_submissions(flags)
