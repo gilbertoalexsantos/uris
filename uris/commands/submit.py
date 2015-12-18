@@ -5,7 +5,7 @@ from ..util import get_file_from_path
 
 
 brief_description = """\
-uri sub -ln=LANGUAGE -code=PROBLEM_CODE -sc=PATH_TO_SOURCE_CODE\
+uris sub -ln=LANGUAGE -code=PROBLEM_CODE -sc=PATH_TO_SOURCE_CODE\
 """
 
 
@@ -27,9 +27,9 @@ The code flag is the ID of the problem.
 The source flag is source code path.
 
 Examples of execution:
-  uri sub -ln=java -code=1399 -sc=uri-1399.java
-  uri sub -ln=c++ -code=1888 -sc="/Users/gilberto/My Codes/source.cpp"\
-  uri sub -ln=py2 -code=1000 -sc=My\ Source\ Code.py
+  uris sub -ln=java -code=1399 -sc=uri-1399.java
+  uris sub -ln=c++ -code=1888 -sc="/Users/gilberto/My Codes/source.cpp"
+  uris sub -ln=py2 -code=1000 -sc=My\ Source\ Code.py\
 """.format(brief_description)
 
 

@@ -2,7 +2,7 @@ from ..login import setup_login
 
 
 brief_description = """\
-uri setup\
+uris setup\
 """
 
 def execute_setup_command(flags):

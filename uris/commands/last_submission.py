@@ -5,7 +5,7 @@ from .submission import print_submission_items
 
 
 brief_description = """\
-uri last [QT_SUBMISSIONS]\
+uris last [QT_SUBMISSIONS]\
 """
 
 help_description = """\
@@ -15,8 +15,8 @@ Command:
 You can specify the number of submissions you want. The default is 1.
 
 Example:
-  uri last
-  uri last 5\
+  uris last
+  uris last 5\
 """.format(brief_description)
 
 @logged

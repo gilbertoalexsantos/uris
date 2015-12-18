@@ -4,7 +4,7 @@ from ..login import get_login_form_data, logged
 
 
 brief_description = """\
-uri subs [-ln=LANGUAGE] [-ans=ANSWER] [-code=PROBLEM_CODE]\
+uris subs [-ln=LANGUAGE] [-ans=ANSWER] [-code=PROBLEM_CODE]\
 """
 
 
@@ -32,9 +32,9 @@ The ans flag accept the options:
 The code flag is the ID of the problem.
 
 Examples of execution:
-  uri subs
-  uri subs -ln=c -ans=tle -code=1399
-  uri subs -ln=java -ans=wa\
+  uris subs
+  uris subs -ln=c -ans=tle -code=1399
+  uris subs -ln=java -ans=wa\
 """.format(brief_description)
 
 

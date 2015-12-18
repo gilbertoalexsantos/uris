@@ -5,15 +5,15 @@ from .last_submission import brief_description as last_submission_brieft_descrip
 
 
 brief_description = """\
-uri help\
+uris help\
 """
 
 help_description = """\
 If you want detailed explanation about a command, use the --help flag.
 
 Example:
-  uri subs --help
-  uri last --help
+  uris subs --help
+  uris last --help
 
 Commands:
   Submissions
