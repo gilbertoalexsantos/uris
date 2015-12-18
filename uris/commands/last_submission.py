@@ -39,7 +39,7 @@ def run_last_submission(flags):
 
 
 def execute_last_submission_command(flags):
-    if 'help' in flags:
+    if 'help' in flags['double']:
         print help_description
     else:
         run_last_submission(flags)
