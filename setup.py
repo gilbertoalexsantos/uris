@@ -14,6 +14,6 @@ setup(name="uris",
           'console_scripts': ["uris=uris.main:execute"],
       },
       install_requires=[
-          'Scrapy==1.0.3',
+          'Scrapy>=1.0.3',
       ],
 )
