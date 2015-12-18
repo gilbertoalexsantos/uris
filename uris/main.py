@@ -11,8 +11,13 @@ from .commands.last_submission import execute_last_submission_command
 def execute():
     commands = {
         'setup': execute_setup_command,
+
         'subs': execute_submissions_command,
+        'submissions': execute_submissions_command,
+
         'sub': execute_submit_command,
+        'submit': execute_submit_command,
+
         'help': execute_helper_command,
         'last': execute_last_submission_command
     }
