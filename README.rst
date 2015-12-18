@@ -22,7 +22,7 @@ First, you need to instal the Scrapy package (more information in install_)
 
 I hope that everything will be fine with Scrapy... If not, consult the manual: install_
 
-Finally, to install the uris package, juse use:
+Finally, to install the uris package, just use:
 
 .. code-block:: python
    
