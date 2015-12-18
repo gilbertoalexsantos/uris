@@ -10,7 +10,7 @@ Currently, it supports the commands:
 - Get last submissions
 - Submit a solution
 
-======
+=======
 Install
 =======
 
