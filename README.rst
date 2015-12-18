@@ -66,7 +66,7 @@ The same command could be rewritten:
 
 .. code-block:: python
    
-   uris sub -ln=c++ -code=1788 -sc="source_code.cpp"
+   uris sub -lang=c++ -code=1788 -sc="source_code.cpp"
 
 It'll submit the problem with the filters:
 
