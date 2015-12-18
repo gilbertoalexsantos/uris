@@ -42,7 +42,7 @@ It'll get the last 3 submissions
 
 .. code-block:: python
    
-   uris subs -ln=java
+   uris subs -lang=java
 
 It'll get the last submissions (20) with the filters:
 
@@ -50,13 +50,19 @@ It'll get the last submissions (20) with the filters:
 
 .. code-block:: python
    
-   uris subs -ln=py3 -ans=tle -code=1899
+   uris subs -lang=py3 --answer=tle --code=1899
 
 It'll get the last submissons with the filters:
 
 - Language: Python 3
 - Answer: Time Limit Exceed
 - Problem Code: 1899
+
+The same command could be rewritten:
+
+.. code-block:: python
+   
+   uris subs --language=py3 -a=tle -c=1899
 
 .. code-block:: python
    
