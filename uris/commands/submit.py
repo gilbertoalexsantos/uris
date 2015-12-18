@@ -2,10 +2,11 @@ from ..blucrawler import get_results_from_crawler
 from ..urispider.spiders.submit import SubmitSpider
 from ..login import get_login_form_data, logged
 from ..util import get_file_from_path
+from ..parser import match_single_double_key
 
 
 brief_description = """\
-uris sub -ln=LANGUAGE -code=PROBLEM_CODE -sc=PATH_TO_SOURCE_CODE\
+uris sub[mit] [-lang | --language] [-c | --code] [-s | --source]
 """
 
 
@@ -15,7 +16,7 @@ Command:
 
 All the three flags are required.
 
-The ln flag accept the options:
+The language flag accept the options:
   c    C
   c++  C++
   java Java
@@ -27,9 +28,9 @@ The code flag is the ID of the problem.
 The source flag is source code path.
 
 Examples of execution:
-  uris sub -ln=java -code=1399 -sc=uri-1399.java
-  uris sub -ln=c++ -code=1888 -sc="/Users/gilberto/My Codes/source.cpp"
-  uris sub -ln=py2 -code=1000 -sc=My\ Source\ Code.py\
+  uris sub -lang=java -c=1399 -s=uri-1399.java
+  uris sub -lang=c++ --code=1888 --source="/Users/gilberto/My Codes/source.cpp"
+  uris submit --language=py2 --code=1000 --source=My\ Source\ Code.py\
 """.format(brief_description)
 
 
@@ -49,26 +50,24 @@ type_of_language = {
 }
 
 
-def pre_process_flags(flags):
-    if 'sc' in flags:
-        flags['sc'] = get_file_from_path(flags['sc'])
-
-
 def get_form_data(flags):
-    pre_process_flags(flags)
-    
     form_data = {}
 
-    if 'code' in flags:
-        form_data[form_data_key['problem']] = flags['code']
+    code_value = match_single_double_key(flags, 'c', 'code')
+    if code_value:
+        form_data[form_data_key['problem']] = code_value
 
-    if 'ln' in flags:
-        language = type_of_language.get(flags['ln'], None)
+
+    language_value = match_single_double_key(flags, 'lang', 'language')
+    if language_value:
+        language = type_of_language.get(language_value, None)
         if language:
             form_data[form_data_key['language']] = language[1]
 
-    if 'sc' in flags:
-        form_data[form_data_key['source']] = flags['sc']
+    source_value = match_single_double_key(flags, 's', 'source')
+    if source_value:
+        source_code = get_file_from_path(source_value)
+        form_data[form_data_key['source']] = source_code
 
     return form_data
 
@@ -85,7 +84,7 @@ def run_submit(flags):
 
 
 def execute_submit_command(flags):
-    if 'help' in flags:
+    if 'help' in flags['double']:
         print help_description
     else:
         run_submit(flags)
