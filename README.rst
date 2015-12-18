@@ -10,7 +10,19 @@ Currently, it supports the commands:
 - Get last submissions
 - Submit a solution
 
-To install, just clone the repository and in the downloaded folder, type:
+======
+Install
+=======
+
+First, you need to instal the Scrapy package (more information in install_)
+
+.. code-block:: python
+   
+   pip install Scrapy
+
+I hope that everything will be fine with Scrapy... If not, consult the manual: install_
+
+Finally, to install the uris package, juse use:
 
 .. code-block:: python
    
@@ -116,3 +128,4 @@ TODO
 
 .. _Uri: https://www.urionlinejudge.com.br
 .. _virtualenvwrapper: https://virtualenvwrapper.readthedocs.org/en/latest/
+.. _install: http://doc.scrapy.org/en/latest/intro/install.html
